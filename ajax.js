@@ -4,7 +4,7 @@
   window.onload = function() {
     // Load the default value to the input field
     let source = document.getElementById('source');
-    source.value = 'https://www.google.es/';
+    source.value = location.href;
     // source.value = location.href;
     
     // Load the content when button is pressed
@@ -42,7 +42,7 @@
     
     if(request.readyState == 4 && request.status == 200) {
       let contents = document.getElementById('contents');
-        contents.innerHTML = request.responseText
+        contents.textContent = request.responseText
       showHeaders();
       showStateCodes();
     }
